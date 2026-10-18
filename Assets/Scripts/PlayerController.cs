@@ -1,3 +1,5 @@
+using Unity.VisualScripting;
+using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
@@ -11,13 +13,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private LayerMask cameraLayer;
+    [SerializeField] private LayerMask interactableObject;
     Rigidbody rbPlayer;
 
     bool onMove = false;
     bool onGround = true;
 
     Vector3 moveDirection = Vector3.zero;
-
 
     #region Unity Methods
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,7 +34,7 @@ public class PlayerController : MonoBehaviour
         if (onMove)
         {
             transform.position += playerSpeed * Time.deltaTime
-                * (moveDirection.x * transform.forward + moveDirection.z * transform.right);
+                * (moveDirection.x * transform.forward + moveDirection.z * transform.right).normalized;
         }
     }
 
@@ -42,6 +44,16 @@ public class PlayerController : MonoBehaviour
         if ((groundLayer.value & (1 << collision.gameObject.layer)) != 0)
         {
             onGround = true;
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if ((interactableObject.value & (1 << other.gameObject.layer)) != 0)
+        {
+            other.GetComponent<ICollectable>().Collect();
+            Debug.Log("Coins: " + Inventory.Instance.GetCoins());
+            Debug.Log("Cassetes: " + Inventory.Instance.GetCassete());
+            other.gameObject.SetActive(false);
         }
     }
     #endregion
@@ -67,6 +79,7 @@ public class PlayerController : MonoBehaviour
         {
             rbPlayer.AddForce(transform.up * jumpForce, ForceMode.Impulse);
             onGround = false;
+            this.transform.SetParent(null);
         }
     }
 
