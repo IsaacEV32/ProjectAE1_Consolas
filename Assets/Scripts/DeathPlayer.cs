@@ -21,7 +21,18 @@ public class DeathPlayer : MonoBehaviour
         if ((deathLayer.value & (1 << other.gameObject.layer)) != 0)
         {
             Inventory.Instance.DecreaseCasseteLifes();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            if (Inventory.Instance.GetCassete() < 0)
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    Inventory.Instance.IncreaseCassete();
+                }
+                SceneManager.LoadScene(0);
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
         }
     }
     public void SetCheckpoint(Transform newCheckPoint)

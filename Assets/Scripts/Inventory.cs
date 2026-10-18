@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class Inventory : MonoBehaviour
 {
     static int coins;
@@ -10,6 +11,7 @@ public class Inventory : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else 
         {
@@ -44,6 +46,7 @@ public class Inventory : MonoBehaviour
     { 
         cassete--;
         HUD.instance.UpdateCasseteText(cassete.ToString());
+        
     }
     public void IncreaseCoins()
     {
