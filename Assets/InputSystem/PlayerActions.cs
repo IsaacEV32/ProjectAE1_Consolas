@@ -121,6 +121,16 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""initialStateCheck"": true,
                     ""priority"": 0
+                },
+                {
+                    ""name"": ""InvokePauseMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""c6ee1222-0a63-4e77-9978-2dabd8749506"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false,
+                    ""priority"": 0
                 }
             ],
             ""bindings"": [
@@ -244,6 +254,17 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7e7b60d8-e965-4d6b-a972-fadd79b24f36"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""InvokePauseMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -255,6 +276,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         m_GamePad_Movement = m_GamePad.FindAction("Movement", throwIfNotFound: true);
         m_GamePad_Jump = m_GamePad.FindAction("Jump", throwIfNotFound: true);
         m_GamePad_Look = m_GamePad.FindAction("Look", throwIfNotFound: true);
+        m_GamePad_InvokePauseMenu = m_GamePad.FindAction("InvokePauseMenu", throwIfNotFound: true);
     }
 
     ~@PlayerActions()
@@ -338,6 +360,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_GamePad_Movement;
     private readonly InputAction m_GamePad_Jump;
     private readonly InputAction m_GamePad_Look;
+    private readonly InputAction m_GamePad_InvokePauseMenu;
     /// <summary>
     /// Provides access to input actions defined in input action map "GamePad".
     /// </summary>
@@ -361,6 +384,10 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "GamePad/Look".
         /// </summary>
         public InputAction @Look => m_Wrapper.m_GamePad_Look;
+        /// <summary>
+        /// Provides access to the underlying input action "GamePad/InvokePauseMenu".
+        /// </summary>
+        public InputAction @InvokePauseMenu => m_Wrapper.m_GamePad_InvokePauseMenu;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -396,6 +423,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Look.started += instance.OnLook;
             @Look.performed += instance.OnLook;
             @Look.canceled += instance.OnLook;
+            @InvokePauseMenu.started += instance.OnInvokePauseMenu;
+            @InvokePauseMenu.performed += instance.OnInvokePauseMenu;
+            @InvokePauseMenu.canceled += instance.OnInvokePauseMenu;
         }
 
         /// <summary>
@@ -416,6 +446,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Look.started -= instance.OnLook;
             @Look.performed -= instance.OnLook;
             @Look.canceled -= instance.OnLook;
+            @InvokePauseMenu.started -= instance.OnInvokePauseMenu;
+            @InvokePauseMenu.performed -= instance.OnInvokePauseMenu;
+            @InvokePauseMenu.canceled -= instance.OnInvokePauseMenu;
         }
 
         /// <summary>
@@ -477,5 +510,12 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnLook(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "InvokePauseMenu" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnInvokePauseMenu(InputAction.CallbackContext context);
     }
 }
