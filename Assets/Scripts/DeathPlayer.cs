@@ -3,29 +3,32 @@ using UnityEngine.SceneManagement;
 
 public class DeathPlayer : MonoBehaviour
 {
-    [SerializeField] Transform checkpoint;
+
     [SerializeField] LayerMask deathLayer;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     static void SafeCheckpointPosition()
     {
-        DeathPlayer player = FindFirstObjectByType<DeathPlayer>();
-        if (player != null)
+        if (SceneManager.GetActiveScene().buildIndex != 0)
         {
-            player.SpawnPlayer();
-            Debug.Log("Player successfully spawned");
+            Inventory player = FindFirstObjectByType<Inventory>();
+            if (player != null)
+            {
+                player.SpawnPlayer();
+                Debug.Log("Player successfully spawned");
+            }
         }
     }
     private void OnTriggerEnter(Collider other)
     {
         if ((deathLayer.value & (1 << other.gameObject.layer)) != 0)
         {
-            Inventory.Instance.DecreaseCasseteLifes();
-            if (Inventory.Instance.GetCassete() < 0)
+            GameManager.Instance.inventory.DecreaseCasseteLifes();
+            if (GameManager.Instance.inventory.GetCassete() < 0)
             {
                 for (int i = 0; i < 5; i++)
                 {
-                    Inventory.Instance.IncreaseCassete();
+                    GameManager.Instance.inventory.IncreaseCassete();
                 }
                 SceneManager.LoadScene(0);
             }
@@ -35,13 +38,6 @@ public class DeathPlayer : MonoBehaviour
             }
         }
     }
-    public void SetCheckpoint(Transform newCheckPoint)
-    {
-        checkpoint = newCheckPoint;
-    }
-    public void SpawnPlayer()
-    {
-        this.transform.position = checkpoint.position;
-    }
+
 
 }

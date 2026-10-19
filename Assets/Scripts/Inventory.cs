@@ -1,23 +1,10 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 public class Inventory : MonoBehaviour
 {
     static int coins;
     static int cassete;
-    public static Inventory Instance;
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else 
-        {
-            Destroy(this.gameObject);
-        }
-    }
+    Vector3 checkpoint;
+    
     void Start()
     {
         if (PlayerPrefs.GetInt("FIRSTTIMEOPENING", 1) == 1)
@@ -29,6 +16,10 @@ public class Inventory : MonoBehaviour
             cassete = 5;
         }
     }
+    public Vector3 GetCheckPosition()
+    {
+        return checkpoint;
+    }
     public int GetCoins()
     {
         return coins;
@@ -36,6 +27,20 @@ public class Inventory : MonoBehaviour
     public int GetCassete()
     {
         return cassete;
+    }
+    public void SetCheckpoint(Transform newCheckPoint)
+    {
+        checkpoint = newCheckPoint.position;
+    }
+    public void SetData(SaveSystemData savedData)
+    {
+        checkpoint = savedData.checkpointPosition;
+        coins = savedData.coins;
+        cassete = savedData.cassetes;
+    }
+    public void SpawnPlayer()
+    {
+        this.transform.position = checkpoint;
     }
     public void IncreaseCassete()
     {
