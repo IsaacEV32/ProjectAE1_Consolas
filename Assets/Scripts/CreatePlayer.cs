@@ -7,7 +7,7 @@ public class CreatePlayer : MonoBehaviour
     void Awake()
     {
         GameObject playerInstance = Instantiate(player, this.transform.position, this.transform.rotation);
-        playerInstance.GetComponent<DeathPlayer>().SetCheckpoint(this.transform);
+        GameManager.Instance.inventory.SetCheckpoint(this.transform);
     }
 
 }

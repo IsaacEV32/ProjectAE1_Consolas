@@ -49,8 +49,8 @@ public class PlayerController : MonoBehaviour
         if ((interactableObject.value & (1 << other.gameObject.layer)) != 0)
         {
             other.GetComponent<ICollectable>().Collect();
-            Debug.Log("Coins: " + Inventory.Instance.GetCoins());
-            Debug.Log("Cassetes: " + Inventory.Instance.GetCassete());
+            Debug.Log("Coins: " + GameManager.Instance.inventory.GetCoins());
+            Debug.Log("Cassetes: " + GameManager.Instance.inventory.GetCassete());
             other.gameObject.SetActive(false);
         }
     }

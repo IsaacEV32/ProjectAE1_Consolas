@@ -9,7 +9,6 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject creditsUI;
     [SerializeField] GameObject mainMenuUI;
     GameObject selectedButton;
-
     public void LoadLevel()
     {
         SceneManager.LoadScene(levelID);
@@ -32,6 +31,7 @@ public class MainMenu : MonoBehaviour
     }
     public void QuitGame()
     {
+        GameManager.Instance.saveSystem.Save();
         Application.Quit();
     }
 }

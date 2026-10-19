@@ -20,8 +20,8 @@ public class HUD : MonoBehaviour
     }
     private void Start()
     {
-        UpdateCoinText(Inventory.Instance.GetCoins().ToString());
-        UpdateCasseteText(Inventory.Instance.GetCassete().ToString());
+        UpdateCoinText(GameManager.Instance.inventory.GetCoins().ToString());
+        UpdateCasseteText(GameManager.Instance.inventory.GetCassete().ToString());
     }
     public void UpdateCoinText(string value)
     {
