@@ -29,6 +29,12 @@ public class GameManager : MonoBehaviour
         this.gameObject.AddComponent(typeof(SaveSystemPC));
         saveSystem = GetComponent<SaveSystem>();
         Destroy(applicationVersionText.gameObject);
+#elif DEVELOPMENT_XBOX
+//Here will go the code for getting the save system of xbox in development
+        applicationVersionText.text = "Platform Version: " + Application.platform + " Version: " + Application.version;
+#elif XBOX_RELEASE
+//Here will go the code for getting the save system of xbox in development
+        Destroy(applicationVersionText.gameObject);
 #elif UNITY_EDITOR
         this.gameObject.AddComponent(typeof(SaveSystemPC));
         saveSystem = GetComponent<SaveSystem>();
