@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7983855978152767293}
   - component: {fileID: 9143127164212766780}
   - component: {fileID: 3149581313480988808}
-  - component: {fileID: 4894289024420424925}
+  - component: {fileID: 1324559942914412087}
   m_Layer: 3
   m_Name: MobilePlatform
   m_TagString: Untagged
@@ -114,7 +114,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.99, y: 0, z: 0.99}
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &4894289024420424925
+--- !u!114 &1324559942914412087
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ca6f5580caed649b85e1bb828d68ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MobilePlatform
-  endPoint: {x: -2.25, y: 7.53, z: -4.2}
+  endPoint: {x: 7.35, y: 9.18, z: -4.2}
   platformSpeed: 2
   delaySeconds: 1
   walkableCollider: {fileID: 3149581313480988808}

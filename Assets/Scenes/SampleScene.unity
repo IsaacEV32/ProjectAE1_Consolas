@@ -2671,30 +2671,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4894289024420424925, guid: 27c8df9fe8c1b77428675f7b30eeca44, type: 3}
-      propertyPath: endPoint.x
-      value: 7.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 4894289024420424925, guid: 27c8df9fe8c1b77428675f7b30eeca44, type: 3}
-      propertyPath: endPoint.y
-      value: 9.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 4894289024420424925, guid: 27c8df9fe8c1b77428675f7b30eeca44, type: 3}
-      propertyPath: endPoint.z
-      value: -4.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4894289024420424925, guid: 27c8df9fe8c1b77428675f7b30eeca44, type: 3}
-      propertyPath: startPoint.x
-      value: 8.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 4894289024420424925, guid: 27c8df9fe8c1b77428675f7b30eeca44, type: 3}
-      propertyPath: startPoint.y
-      value: 11.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 4894289024420424925, guid: 27c8df9fe8c1b77428675f7b30eeca44, type: 3}
-      propertyPath: startPoint.z
-      value: -4.2
-      objectReference: {fileID: 0}
     - target: {fileID: 4970842729607931151, guid: 27c8df9fe8c1b77428675f7b30eeca44, type: 3}
       propertyPath: m_Name
       value: MobilePlatform (2)
@@ -3243,6 +3219,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1324559942914412087, guid: 27c8df9fe8c1b77428675f7b30eeca44, type: 3}
+      propertyPath: endPoint.x
+      value: -2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1324559942914412087, guid: 27c8df9fe8c1b77428675f7b30eeca44, type: 3}
+      propertyPath: endPoint.y
+      value: 7.53
+      objectReference: {fileID: 0}
     - target: {fileID: 3629596410492849603, guid: 27c8df9fe8c1b77428675f7b30eeca44, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.25

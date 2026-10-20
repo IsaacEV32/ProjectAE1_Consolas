@@ -20,6 +20,10 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame()
     {
         GameManager.Instance.saveSystem.Save();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
         Application.Quit();
+#endif
     }
 }

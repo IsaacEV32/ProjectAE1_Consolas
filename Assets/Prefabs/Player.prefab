@@ -121,7 +121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4483400200457332078}
+      - m_Target: {fileID: 1997052650636198418}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: GoToMainMenu
         m_Mode: 1
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4483400200457332078}
+      - m_Target: {fileID: 1997052650636198418}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
@@ -415,7 +415,7 @@ GameObject:
   - component: {fileID: 3706738851132073896}
   - component: {fileID: 3335131350588136228}
   - component: {fileID: 3678748915337976779}
-  - component: {fileID: 1565081352313970154}
+  - component: {fileID: 735786517555556541}
   m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -541,7 +541,7 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!114 &1565081352313970154
+--- !u!114 &735786517555556541
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -569,9 +569,9 @@ GameObject:
   - component: {fileID: 367617122921389340}
   - component: {fileID: 5038498758136027969}
   - component: {fileID: 7602851931193964800}
-  - component: {fileID: 1819746777264550327}
-  - component: {fileID: -2270831116900027016}
-  - component: {fileID: -5249250164682705008}
+  - component: {fileID: -2683977211137874740}
+  - component: {fileID: 7926995472920230293}
+  - component: {fileID: 579761757429276624}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -730,7 +730,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1819746777264550327}
+      - m_Target: {fileID: -2683977211137874740}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
@@ -746,7 +746,7 @@ MonoBehaviour:
     m_ActionName: 'GamePad/Movement[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1819746777264550327}
+      - m_Target: {fileID: -2683977211137874740}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnJump
         m_Mode: 0
@@ -762,7 +762,7 @@ MonoBehaviour:
     m_ActionName: 'GamePad/Jump[/XInputControllerWindows/buttonEast]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1565081352313970154}
+      - m_Target: {fileID: 735786517555556541}
         m_TargetAssemblyTypeName: PlayerCamera, Assembly-CSharp
         m_MethodName: OnLook
         m_Mode: 0
@@ -778,7 +778,7 @@ MonoBehaviour:
     m_ActionName: 'GamePad/Look[/XInputControllerWindows/rightStick/up,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/rightStick/right]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -5249250164682705008}
+      - m_Target: {fileID: 579761757429276624}
         m_TargetAssemblyTypeName: InvokePauseMenu, Assembly-CSharp
         m_MethodName: CallPauseMenu
         m_Mode: 0
@@ -797,7 +797,7 @@ MonoBehaviour:
   m_DefaultActionMap: GamePad
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1819746777264550327
+--- !u!114 &-2683977211137874740
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -823,7 +823,7 @@ MonoBehaviour:
   interactableObject:
     serializedVersion: 2
     m_Bits: 512
---- !u!114 &-2270831116900027016
+--- !u!114 &7926995472920230293
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -835,11 +835,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb92eb547c9db4946ac7cb4f346cea95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeathPlayer
-  checkpoint: {fileID: 0}
   deathLayer:
     serializedVersion: 2
     m_Bits: 256
---- !u!114 &-5249250164682705008
+--- !u!114 &579761757429276624
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1110,7 +1109,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4483400200457332078}
+      - m_Target: {fileID: 1997052650636198418}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -1134,7 +1133,7 @@ GameObject:
   - component: {fileID: 3542626620504447971}
   - component: {fileID: 2989201869958971993}
   - component: {fileID: 1909796961461910279}
-  - component: {fileID: 4483400200457332078}
+  - component: {fileID: 1997052650636198418}
   m_Layer: 0
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -1225,7 +1224,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &4483400200457332078
+--- !u!114 &1997052650636198418
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

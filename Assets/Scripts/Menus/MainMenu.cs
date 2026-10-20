@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] int levelID;
@@ -32,6 +31,10 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
         GameManager.Instance.saveSystem.Save();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
         Application.Quit();
+#endif
     }
 }

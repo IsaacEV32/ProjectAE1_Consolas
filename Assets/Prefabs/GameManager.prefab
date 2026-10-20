@@ -131,7 +131,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -407.11365, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -324,10 +324,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5555735206681816291}
-  - component: {fileID: 3791837354459462725}
-  - component: {fileID: 6615018487977106281}
   - component: {fileID: 2912938100993628492}
-  - component: {fileID: 4574953469842334842}
+  - component: {fileID: 8689061447664994949}
+  - component: {fileID: 2426973992696716988}
+  - component: {fileID: 4893385333646017725}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -352,32 +352,6 @@ Transform:
   - {fileID: 7982930268857930105}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3791837354459462725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6528352601087329505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d8108efb3be5a94c9a659946c7634bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Inventory
---- !u!114 &6615018487977106281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6528352601087329505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fd535ba1b0b1814d8b8592e2fd7b98a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DisconectionOfTheDevice
-  notificationPanel: {fileID: 3700051494120279679}
-  notificationText: {fileID: 6912581521562608564}
 --- !u!114 &2912938100993628492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,7 +370,7 @@ MonoBehaviour:
   m_DeviceLostEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6615018487977106281}
+      - m_Target: {fileID: 8689061447664994949}
         m_TargetAssemblyTypeName: DisconectionOfTheDevice, Assembly-CSharp
         m_MethodName: DisconnectDevice
         m_Mode: 1
@@ -411,7 +385,7 @@ MonoBehaviour:
   m_DeviceRegainedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6615018487977106281}
+      - m_Target: {fileID: 8689061447664994949}
         m_TargetAssemblyTypeName: DisconectionOfTheDevice, Assembly-CSharp
         m_MethodName: ConnectDevice
         m_Mode: 1
@@ -448,7 +422,21 @@ MonoBehaviour:
   m_DefaultActionMap: GamePad
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &4574953469842334842
+--- !u!114 &8689061447664994949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6528352601087329505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fd535ba1b0b1814d8b8592e2fd7b98a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DisconectionOfTheDevice
+  notificationPanel: {fileID: 3700051494120279679}
+  notificationText: {fileID: 6912581521562608564}
+--- !u!114 &2426973992696716988
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -463,6 +451,18 @@ MonoBehaviour:
   saveSystem: {fileID: 0}
   inventory: {fileID: 0}
   applicationVersionText: {fileID: 5806217204240330482}
+--- !u!114 &4893385333646017725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6528352601087329505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8108efb3be5a94c9a659946c7634bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Inventory
 --- !u!1 &6825838680774061440
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,10 +537,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
