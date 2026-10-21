@@ -22,8 +22,10 @@ public class PauseMenu : MonoBehaviour
         GameManager.Instance.saveSystem.Save();
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-#else
+#elif DEVELOPMENT_PC || PC_RELEASE
         Application.Quit();
+#elif DEVELOPMENT_XBOX || XBOX_RELEASE
+//Here will go the code for exiting the application in Xbox
 #endif
     }
 }

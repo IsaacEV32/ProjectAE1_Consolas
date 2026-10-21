@@ -1,15 +1,13 @@
 
 using UnityEngine;
-using System.IO;
 public class SaveSystem : MonoBehaviour, ISaveSystem
 {
     protected SaveSystemData data;
     protected Inventory inventory;
-    protected string savePath;
-    private void Start()
+    protected static string savePath;
+    public virtual void Awake()
     {
         inventory = GetComponent<Inventory>();
-        savePath = Application.persistentDataPath + "/savefile.json";
     }
 
     public virtual void Save()

@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class SaveSystemXbox : SaveSystem
 {
+    public override void Awake()
+    {
+        //Here I will initialize the path for persistent data in Xbox
+        base.Awake();
+    }
     public override void Save()
     {
         //Here will go the code for Xbox to save the game
