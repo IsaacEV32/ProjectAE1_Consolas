@@ -7,7 +7,14 @@ public class CreatePlayer : MonoBehaviour
     void Awake()
     {
         GameObject playerInstance = Instantiate(player, this.transform.position, this.transform.rotation);
-        GameManager.Instance.inventory.SetCheckpoint(GameManager.Instance.inventory.GetCheckPosition());
+        if (GameManager.Instance.inventory.GetCheckPosition() == Vector3.zero)
+        {
+            GameManager.Instance.inventory.SetCheckpoint(this.transform.position);
+        }
+        else
+        {
+            GameManager.Instance.inventory.SetCheckpoint(GameManager.Instance.inventory.GetCheckPosition());
+        }
     }
 
 }

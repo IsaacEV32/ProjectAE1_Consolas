@@ -9,6 +9,7 @@ public class GoalBehaviour : MonoBehaviour
     {
         if ((playerLayer.value & (1 << other.gameObject.layer)) != 0)
         {
+            GameManager.Instance.inventory.SetCheckpoint(Vector3.zero);
             GameManager.Instance.saveSystem.Save();
             SceneManager.LoadScene(returnSceneIndex);
         }
