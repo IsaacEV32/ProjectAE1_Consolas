@@ -28,9 +28,9 @@ public class Inventory : MonoBehaviour
     {
         return cassete;
     }
-    public void SetCheckpoint(Transform newCheckPoint)
+    public void SetCheckpoint(Vector3 newCheckPoint)
     {
-        checkpoint = newCheckPoint.position;
+        checkpoint = newCheckPoint;
     }
     public void SetData(SaveSystemData savedData)
     {
